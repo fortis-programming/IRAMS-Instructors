@@ -1,0 +1,50 @@
+.dashboard {
+  padding: 18px;
+  
+  main {
+    background-color: white;
+    padding: 8px 0px;
+    border-radius: 4px;
+    border-right: 1px solid $border-color;
+  
+    .dashboard-items > *,
+    .sender-information > * {
+      margin: auto 0;
+      display: flex;
+      background-color: transparent;
+    }
+    
+    .dashboard-items {
+      display: grid;
+      background-color: white;
+      grid-template-columns: 30% 50% 10% 10%;
+      padding: 12px;
+      border-top: 1px solid $bg-color;
+      border-bottom: 1px solid $bg-color;
+    
+      &:hover {
+        background-color: $primary-1;
+      }
+    
+      .sender-information {
+        display: flex;
+        flex-direction: column;
+        
+        small {
+          color: $black-1;
+        }
+      }
+      
+      .date {
+        text-align: right;
+        float: right;
+        justify-content: right;
+        font-size: 0.90rem;
+      }
+      
+      .meta {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

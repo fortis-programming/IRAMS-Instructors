@@ -1,0 +1,58 @@
+.login {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    background-color: white;
+    border-radius: 4px;
+    padding: 40px;
+    width: 40%;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+
+
+    header,
+    .banner,
+    span,
+    strong, p {
+      background-color: transparent;
+    }
+    
+    header {
+     
+     img {
+       background-color: transparent;
+     } 
+     
+      span {
+        border-left: 1px solid $black-1;
+        margin-left: 5px;
+        padding-left: 5px;
+      }
+    }
+    
+    div , a{
+      background-color: transparent;
+    }
+    
+    a {
+      float: right;
+    }
+  }
+  
+  @media screen and (max-width: 920px) {
+    form {
+      padding: 18px;
+      width: 50vw;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    form {
+      width: 90vw;
+    }
+  }
+}

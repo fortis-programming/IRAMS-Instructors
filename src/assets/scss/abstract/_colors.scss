@@ -1,0 +1,19 @@
+$primary: #131C71;
+$primary-light: #ecedf825;
+$primary-1: #ecedf865;
+$primary-2: #ecedf8af;
+
+$black: #000000;
+$black-1: #22222270;
+
+$bg-color: #F1F3F4;
+$header-bg: #F1F3F4;
+
+
+$border-color: rgb(233, 233, 233);
+
+.color {
+  &__light {
+    color: $black-1;
+  }
+}

@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  background-color: $bg-color;
+  font-size: 0.922rem;
+}
+
+.page {
+  height: 100vh;
+  
+  &__inner {
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
