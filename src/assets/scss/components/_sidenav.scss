@@ -1,0 +1,39 @@
+.sidenav {
+  background-color: white;
+  height: 100vh;
+  border-right: 1px solid $border-color;
+
+  nav {
+    background-color: white;
+
+    .nav-items {
+      font-size: 0.83rem;
+      color: $black-1;
+      border: 2px solid transparent;
+      background-color: transparent;
+
+      &:active,
+      .active {
+        background-color: white;
+
+        svg {
+          color: $primary;
+          border-radius: 4px;
+          background-color: $primary-2;
+        }
+      }
+
+      svg {
+        padding: 8px;
+        color: $black-1;
+        height: 40px;
+        background-color: transparent;
+      }
+
+      div {
+        background-color: white;
+        padding: 8px;
+      }
+    }
+  }
+}

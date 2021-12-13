@@ -1,0 +1,12 @@
+.large-heavy {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 0.855rem;
+  
+  &__heavy {
+    font-weight: 600;
+  }
+}
