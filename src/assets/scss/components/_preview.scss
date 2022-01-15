@@ -8,21 +8,27 @@
   width: 95%;
   height: 95%;
   border-radius: 8px;
+  background-color: white;
   
   .meta {
-    background-color: white;
+    height: 95vh;
+    overflow: auto;
     
+    .NgxEditor div > *, div, ul {
+      color: red;
+      background-color: white;
+    }
+    
+
     .NgxEditor {
       background-color: white;
+      border: none;
+      
       &__Wrapper {
-        border: none;
+        background-color: white;
+        border: none !important;
         padding: 8px;
         height: 100vh;
-        overflow: auto;
-      }
-      
-      ngx-editor {
-        background-color: red;
       }
     }
     

@@ -11,6 +11,8 @@ import { DashboardItemComponent } from './dashboard/dashboard-item/dashboard-ite
 import { ViewRequestComponent } from './view-request/view-request.component';
 import { MemberItemComponent } from './view-request/member-item/member-item.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { NgxEditorModule } from 'ngx-editor';
     FormsModule,
     NgxEditorModule
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, AuthGuardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

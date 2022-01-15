@@ -6,7 +6,6 @@
   background-color: transparent;
 
   .profile {
-    background-color: blue;
     height: 30px;
     width: 30px;
     border-radius: 50px;
@@ -18,3 +17,19 @@
 .member-list > * {
   margin: auto 0;
 }
+
+.user-chip {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+
+  img {
+    height: 30px;
+    margin-right: 5px;
+  }
+}
+
+.user-chip > * {
+  margin: auto 0;
+}
+
