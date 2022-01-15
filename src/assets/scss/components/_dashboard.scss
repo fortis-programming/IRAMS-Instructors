@@ -1,0 +1,56 @@
+.dashboard {
+  padding: 18px;
+  height: 100%;
+
+  main {
+    height: 100%;
+  }
+
+  .dashboard-item > * {
+    margin: auto 0;
+  }
+
+  .dashboard-header {
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+    padding: 0px 8px;
+  }
+
+  .dashboard-item {
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    padding: 8px;
+
+    &:hover {
+      background-color: #f3f3f35f;
+    }
+
+    .sender {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      
+      .user {
+        strong {
+          margin: auto;
+          margin-left: 5px;
+        }
+        img {
+          height: 30px;
+        }
+      }
+    }
+
+    .time {
+      justify-content: flex-end;
+      text-align: right;
+    }
+    
+    .message {
+      text-align: left;
+      padding: 8px;
+    }
+  }
+}

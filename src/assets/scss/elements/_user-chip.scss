@@ -1,0 +1,35 @@
+.member-list {
+  border: none;
+  padding: 8px 0px;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+
+  .profile {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    margin-right: 5px;
+  }
+  
+}
+
+.member-list > * {
+  margin: auto 0;
+}
+
+.user-chip {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+
+  img {
+    height: 30px;
+    margin-right: 5px;
+  }
+}
+
+.user-chip > * {
+  margin: auto 0;
+}
+

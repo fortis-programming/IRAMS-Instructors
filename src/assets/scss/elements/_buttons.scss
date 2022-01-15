@@ -1,0 +1,45 @@
+.btn {
+  padding: 4px;
+  font-size: 500 14px/36px;
+
+  &__primary {
+
+    padding: 12px;
+    background-color: $primary;
+    width: 100%;
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__common {
+    background-color: $primary;
+    color: white;
+    
+    &:hover {
+      color: white;
+    }
+  }
+  
+  &__common_secondary {
+    background-color: $bg-color;
+  }
+}
+
+
+select, option {
+  text-align: left;
+}
+
+.close-btn {
+  height: 30px;
+  padding: 4px;
+  border-radius: 50px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $bg-color;
+  }
+}

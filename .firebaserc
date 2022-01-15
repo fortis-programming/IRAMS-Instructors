@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "r-space-e74eb": {
+      "hosting": {
+        "IRAMS-Instructors": [
+          "irams-instructors"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "r-space-e74eb"
+  }
+}

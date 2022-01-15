@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  font-size: 0.922rem;
+}
+
+.page {
+  height: 100vh;
+  background-color: white;
+  
+  &__inner {
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
