@@ -1,50 +1,56 @@
 .dashboard {
   padding: 18px;
-  
+  height: 100%;
+
   main {
-    background-color: white;
-    padding: 8px 0px;
-    border-radius: 4px;
-    border-right: 1px solid $border-color;
-  
-    .dashboard-items > *,
-    .sender-information > * {
-      margin: auto 0;
-      display: flex;
-      background-color: transparent;
+    height: 100%;
+  }
+
+  .dashboard-item > * {
+    margin: auto 0;
+  }
+
+  .dashboard-header {
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+    padding: 0px 8px;
+  }
+
+  .dashboard-item {
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    padding: 8px;
+
+    &:hover {
+      background-color: #f3f3f35f;
     }
-    
-    .dashboard-items {
-      display: grid;
-      background-color: white;
-      grid-template-columns: 30% 50% 10% 10%;
-      padding: 12px;
-      border-top: 1px solid $bg-color;
-      border-bottom: 1px solid $bg-color;
-    
-      &:hover {
-        background-color: $primary-1;
-      }
-    
-      .sender-information {
-        display: flex;
-        flex-direction: column;
-        
-        small {
-          color: $black-1;
+
+    .sender {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      
+      .user {
+        strong {
+          margin: auto;
+          margin-left: 5px;
+        }
+        img {
+          height: 30px;
         }
       }
-      
-      .date {
-        text-align: right;
-        float: right;
-        justify-content: right;
-        font-size: 0.90rem;
-      }
-      
-      .meta {
-        font-size: 0.9rem;
-      }
+    }
+
+    .time {
+      justify-content: flex-end;
+      text-align: right;
+    }
+    
+    .message {
+      text-align: left;
+      padding: 8px;
     }
   }
 }

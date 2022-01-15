@@ -4,6 +4,7 @@
   border-right: 1px solid $border-color;
 
   nav {
+    margin: auto 0;
     background-color: white;
 
     .nav-items {
@@ -15,8 +16,7 @@
       &:active,
       .active {
         background-color: white;
-
-        svg {
+      svg {
           color: $primary;
           border-radius: 4px;
           background-color: $primary-2;

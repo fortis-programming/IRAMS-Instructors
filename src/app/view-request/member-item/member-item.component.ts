@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SenderModel } from 'src/app/_shared/models/sender.model';
 
 @Component({
   selector: 'app-member-item',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-item.component.scss']
 })
 export class MemberItemComponent implements OnInit {
+  @Input() member: SenderModel = {
+    name: '',
+    photoUrl: ''
+  };
 
   constructor() { }
 

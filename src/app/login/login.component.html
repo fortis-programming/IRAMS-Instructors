@@ -9,6 +9,9 @@
         Evaluate and commuticate with scholars.
       </p>
     </header>
+    <div class="alert alert-danger fade-in" role="alert" *ngIf="message != ''">
+      Incorrect username or password
+    </div>
     <div class="form-floating mb-3">
       <input [(ngModel)]="loginModel.email" name="email" #email="ngModel" pattern="[a-z0-9._%+-]+@tup+\.edu+\.ph$"
         type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
@@ -22,9 +25,9 @@
       <label for="floatingPassword" *ngIf="!hasError(password)">Password</label>
       <label class="message__error" for="floatingPassword" *ngIf="hasError(password) && password.errors?.required">Password is required</label>
     </div>
-    <div class="mb-3">
+    <div class="container mb-3">
       <a class="small small__heavy" href="#">Forgot password?</a>
     </div>
-    <button class="btn btn__primary" [disabled]="!loginForm.valid">Login</button>
+    <button class="btn btn__primary" [disabled]="!loginForm.valid" (click)="login()">Login</button>
   </form>
 </div>

@@ -1,11 +1,16 @@
-<div class="dashboard-items" (click)="openRequest('12323232')">
-  <div class="sender-information">
-    <small>Allain John Notarte</small>
-    <strong>Test Validation</strong>
+<div class="dashboard-item" (click)="openRequest(request.projectId)">
+  
+  <div class="sender">
+    <div class="user">
+      <img src="../../../assets/images/user.png">
+      <strong>{{ senderData.name }}</strong>
+    </div>
   </div>
-  <div class="meta">
-    testsrakjakdjakdajkdajsdakdj
+
+  <p class="message text-start">{{ request.message }}</p>
+
+  <div class="time">
+    1hr ago
   </div>
-  <div class="status"></div>
-  <div class="date">5 mins. ago</div>
+
 </div>
