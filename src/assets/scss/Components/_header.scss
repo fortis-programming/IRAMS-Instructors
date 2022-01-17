@@ -1,0 +1,30 @@
+.header {
+  padding: 8px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid whitesmoke;
+  width: 100%;
+  
+  .title,
+  .user-chip {
+    margin: auto 0;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+}
+
+
+
+.dropdown-item {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  color: $black-1;
+}
+
+.dropdown-item > * {
+  font-size: 0.80rem;
+}

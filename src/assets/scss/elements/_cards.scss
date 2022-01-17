@@ -1,0 +1,89 @@
+.user-card {
+  display: flex;
+  flex-direction: row;
+
+  svg {
+    height: 20px;
+    margin: auto;
+    color: $black-1;
+  }
+
+  img {
+    height: 30px;
+  }
+}
+
+.request-card {
+  border-bottom: 1px solid whitesmoke;
+  padding: 8px;
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.301);
+  }
+
+  .sender {
+
+    img,
+    strong {
+      margin: auto;
+    }
+
+    div {
+      font-size: 0.588rem;
+    }
+
+    img {
+      margin-right: 5px;
+      height: 30px;
+    }
+  }
+
+  .date {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.request-card>* {
+  margin: auto 0;
+}
+
+@media screen and (max-width: 500px) {
+
+  .request-card {
+    border-bottom: 1px solid whitesmoke;
+    padding: 8px;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 45% 35% 20%;
+  }
+
+  .truncate {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+@media screen and (max-width: 930px) {
+  .request-card {
+    border-bottom: 1px solid whitesmoke;
+    padding: 8px;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 40% 50% 10%;
+  }
+
+  .truncate {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

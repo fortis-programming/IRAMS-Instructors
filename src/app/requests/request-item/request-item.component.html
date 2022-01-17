@@ -1,0 +1,14 @@
+<div class="request-card" routerLink="../view/{{ item.requestId }}">
+    <div class="sender">
+        <img src="../../../assets/images/user.png">
+        <strong class="small">{{ sender.name }}</strong>
+    </div>
+
+    <div class="small truncate ">
+        {{ item.message }}
+    </div>
+
+    <div class="small date">
+        {{ item.date }}
+    </div>
+</div>

@@ -1,45 +1,54 @@
-.btn {
-  padding: 4px;
-  font-size: 500 14px/36px;
+.btns {
+  padding: 8px 12px;
+  border: none;
+  background-color: none;
+  font-size: 0.80rem;
 
   &__primary {
+      background-color: $primary;
+      color: white;
+      border-radius: 4px;
+  }
 
-    padding: 12px;
-    background-color: $primary;
-    width: 100%;
-    color: white;
+
+  &__ghost {
+    border-radius: 4px;
+    background-color: white;
 
     &:hover {
-      color: white;
+      color: $primary;
     }
   }
 
-  &__common {
-    background-color: $primary;
-    color: white;
-    
-    &:hover {
-      color: white;
-    }
-  }
-  
-  &__common_secondary {
-    background-color: $bg-color;
+  &__ghost-active {
+    border-radius: 4px;
+    border-radius: 0;
+    border-bottom: 2px solid $primary;
+    background-color: white;
+    font-weight: 500;
+    color: $primary;
   }
 }
 
-
-select, option {
-  text-align: left;
+.btns-container {
+    border-radius: 4px; 
+    overflow: hidden;
 }
 
-.close-btn {
-  height: 30px;
-  padding: 4px;
-  border-radius: 50px;
-  cursor: pointer;
-  
+.close-icon {
+  position: fixed;
+  right: 1%;
+  border: 1px solid whitesmoke;
+  padding: 8px;
+  margin: 0px;
+  border-radius: 50%;
+
   &:hover {
-    background-color: $bg-color;
+    background-color: whitesmoke;
+    cursor: pointer;
+  }
+
+  svg {
+    height: 15px;
   }
 }

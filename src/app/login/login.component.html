@@ -1,33 +1,40 @@
 <div class="login">
   <form #loginForm="ngForm">
-    <header class="mb-3">
-      <div class="banner">
-        <img src="../../assets/images/logo1.png" alt="logo" height="30px">
-        <span class="large-heavy">Instructors</span>
-      </div>
-      <p class="small mt-2">
-        Evaluate and commuticate with scholars.
-      </p>
-    </header>
-    <div class="alert alert-danger fade-in" role="alert" *ngIf="message != ''">
-      Incorrect username or password
+    <div class="banner">
+      <h5>
+        Welcome to IRAMS
+      </h5>
+      <small>
+        Collaborate and Evaluate your students works.
+      </small>
+    </div>
+    <div class="alert alert-danger small" role="alert" *ngIf="messageVisible">
+      Incorrect username or password.
     </div>
     <div class="form-floating mb-3">
-      <input [(ngModel)]="loginModel.email" name="email" #email="ngModel" pattern="[a-z0-9._%+-]+@tup+\.edu+\.ph$"
-        type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-      <label for="floatingInput" *ngIf="!hasError(email)">Email address</label>
-      <label class="message__error" for="floatingInput" *ngIf="hasError(email) && email.errors?.required">Email address is required</label>
-      <label class="message__error" for="floatingInput" *ngIf="hasError(email) && email.errors?.pattern">Invalid email</label>
+      <input [(ngModel)]="loginRequest.email" name="email" #email="ngModel" type="email" class="form-control"
+        id="floatingInput" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@tup+\.edu+\.ph$" required>
+      <label for="floatingInput" *ngIf="!hasError(email)">TUP email</label>
+      <label class="message__error" for="floatingInput" *ngIf="hasError(email) && !email.errors?.['pattern']">TUP email is required</label>
+      <label class="message__error" for="floatingInput" *ngIf="hasError(email) && email.errors?.['pattern']">TUP email invalid</label>
     </div>
-    <div class="form-floating mb-3">
-      <input [(ngModel)]="loginModel.password" name="password" #password="ngModel" 
-        type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+    <div class="form-floating">
+      <input [(ngModel)]="loginRequest.password" name="password" #password="ngModel" type="password"
+        class="form-control" id="floatingPassword" placeholder="Password" required>
       <label for="floatingPassword" *ngIf="!hasError(password)">Password</label>
-      <label class="message__error" for="floatingPassword" *ngIf="hasError(password) && password.errors?.required">Password is required</label>
+      <label class="message__error" for="floatingPassword" *ngIf="hasError(password)">Password is required</label>
     </div>
-    <div class="container mb-3">
-      <a class="small small__heavy" href="#">Forgot password?</a>
+    <div class="mt-3">
+      <a class="small">Forgot password?</a>
     </div>
-    <button class="btn btn__primary" [disabled]="!loginForm.valid" (click)="login()">Login</button>
+    <div class="mt-3 w-100">
+      <div class="btns" *ngIf="loading">
+        <div class="spinner-border text-primary" role="status" style="display: flex; margin: auto;">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <Button class="btns btns__primary w-100 p-3" *ngIf="!loading" (click)="loginWithCredentials()"
+        [disabled]="loginForm.invalid">Login</Button>
+    </div>
   </form>
 </div>

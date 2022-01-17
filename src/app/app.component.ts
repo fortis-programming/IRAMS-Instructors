@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'IRAMS-Instructors';
+  title = 'IRAMS-Intructors.v2';
 }

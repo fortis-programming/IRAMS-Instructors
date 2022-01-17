@@ -1,0 +1,35 @@
+.account-settings {
+  .user-container {
+    border: 1px solid whitesmoke;
+    margin: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+
+    div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      
+      div {
+        margin: 15px;
+      }
+    }
+
+    img {
+      height: 100px;
+    }
+  }
+
+  .user-information {
+    border: 1px solid whitesmoke;
+    margin: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 10px;
+  }
+}

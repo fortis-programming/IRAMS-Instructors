@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { database } from './firebase.service';
-import { ref, get, child } from "firebase/database";
-import { SenderModel } from '../_shared/models/sender.model';
 
-const dbRef = ref(database);
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { UserModel } from '../_shared/models/user.model';
+import { firebase } from './firebase.service';
+
+const db = getDatabase(firebase);
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,20 @@ export class UserService {
 
   constructor() { }
 
-  async getUserData(uid: string): Promise<SenderModel> {
-    let user: SenderModel = {
-      name: '',
-      photoUrl: ''
-    };
-    
-    await get(child(dbRef, 'usersData/' + uid)).then((snapshot) => {
-      if (snapshot.exists()) {
-        const userData = {
-          name: [JSON.parse(JSON.stringify(snapshot.val()))][0]['name'],
-          photoUrl: [JSON.parse(JSON.stringify(snapshot.val()))][0]['photoUrl']
+  async getUserData(uid: string): Promise<UserModel> {
+    const response = new Promise<UserModel>((resolve) => {
+      const userReference = ref(db, 'usersData/' + uid);
+      onValue(userReference, (snapshot) => {
+        let user: UserModel = {
+          name: '',
+          photoUrl: ''
         }
-        user = userData;
-      }
-    });
-    return user;
+        const data = snapshot.val();
+        user.name = data['name'];
+        user.photoUrl = data['photoUrl'];
+        resolve(user);
+      })
+    })
+    return response;
   }
 }

@@ -1,0 +1,72 @@
+<div class="request-preview">
+
+  <div class="navigation" *ngIf="!loading">
+    <a routerLink="../../../requests">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+          clip-rule="evenodd" />
+      </svg>
+    </a>
+
+    <div class="btns-container" *ngIf="!document.returned">
+      <button type="button" class="btns" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">{{ document.status }}</button>
+      <button type="button" class="btns dropdown-toggle dropdown-toggle-split"
+        style="border-left: 1px solid rgba(128, 128, 128, 0.295);" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Revise</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="changeReturnStatus('Ongoing')">Ongoing</a></li>
+        <li><a class="dropdown-item" (click)="changeReturnStatus('Verified')">Verified</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main *ngIf="!loading">
+    <div class="content-header">
+      <div class="title">
+        <small>{{ document.type }}</small>
+        <h4>{{ document.title }}</h4>
+        <div class="d-flex gap-2">
+          <small>Submitted {{ document.date }}</small>
+          <small>by {{ sender.name }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="ck-container">
+      <ckeditor #editor [(ngModel)]="document.metaData" [config]="[['exportPdf']]" [readOnly]="true"></ckeditor>
+    </div>
+  </main>
+</div>
+<div class="empty-state" style="justify-content: center;" *ngIf="loading">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+
+
+
+<!-- RETURN MODAL -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Complete Validation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Status:</strong> {{ document.status }}</p>
+        <hr>
+        <!-- EDITOR -->
+        <ckeditor #comment class="editor" [(ngModel)]="document.comments" [config]="{ toolbar: [['Bold', 'Italic' ] ] }">
+        </ckeditor>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btns btns__secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btns btns__primary" (click)="returnRequest()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

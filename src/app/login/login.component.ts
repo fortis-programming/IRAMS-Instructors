@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { AuthService } from '../services/auth.service';
-import { LoginRequest } from '../_shared/models/requests/login.request';
+import { LoginModel } from '../_shared/models/login-model';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,11 @@ import { LoginRequest } from '../_shared/models/requests/login.request';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginModel: LoginRequest = {
+  loginRequest: LoginModel = {
     email: '',
     password: ''
   }
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -21,20 +23,21 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  message = '';
-  login(): void {
-    // this.authService.createUser(this.loginModel);
-    this.authService.loginWithCredential(this.loginModel).then((response) => {
-      (response)? this.router.navigate(['app/dashboard']) : this.message = 'Incorrect username or password';
+  hasError(formControl: any): boolean {
+    return formControl.invalid && (formControl.dirty || formControl.touched);
+  }
 
-      setTimeout(() => {
-        this.message = '';
-      }, 5000);
-    });
+  messageVisible = false;
+  loading = false;
+  loginWithCredentials(): void {
+    this.loading = true;
+    this.authService.signInWithPassword(this.loginRequest).then((response) => {
+      this.router.navigate(['app']);
+      this.loading = false;
+    }).catch(() => {
+      this.messageVisible = true;
+      this.loading = false;
+    })
   }
-  
-   //  TO CHECK IF NGMODEL INPUT OR FORM IS VALID OR HAS ERROR
-   hasError(formControl: any): boolean {
-    return formControl.invalid && (formControl.dirty || formControl.touched)
-  }
+
 }

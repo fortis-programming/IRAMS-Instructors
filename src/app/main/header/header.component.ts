@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
-import { SenderModel } from 'src/app/_shared/models/sender.model';
-import { HeaderService } from './header.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,26 +10,18 @@ import { HeaderService } from './header.service';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private headerService: HeaderService,
-    private userService: UserService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.getUser();
   }
 
-  getTitle(): string {
-    return this.headerService.getTitle();
-  }
-
-  user: SenderModel = {
-    name:'',
-    photoUrl: ''
-  }
-  getUser(): void {
-    const uid = JSON.parse(JSON.stringify(sessionStorage.getItem('_uid')));
-    this.userService.getUserData(uid).then((response) => {
-      this.user = response;
+  logout(): void {
+    this.authService.logout().then(() => {
+      this.router.navigate(['login']);
+    }).catch(() => {
+      console.log('error occured try again');
     })
   }
 }

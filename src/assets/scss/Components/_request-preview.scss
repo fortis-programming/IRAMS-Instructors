@@ -1,0 +1,36 @@
+.request-preview {
+    
+    .navigation > * {
+        margin: auto 0;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 4px;
+
+        svg {
+            height: 30px;
+            color: $black-1;
+        }
+    }   
+
+
+    main {
+        margin-top: 5px;
+        .content-header {
+            .title {
+                display: flex;
+                flex-direction: column;
+                small {
+                    margin: auto 0;
+                    color: $black-1;
+                }
+            }
+        }
+
+        .ck-container {
+            margin-top: 10px;
+        }
+    }
+}

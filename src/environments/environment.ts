@@ -13,9 +13,10 @@ export const firebaseConfig = {
   projectId: "r-space-e74eb",
   storageBucket: "r-space-e74eb.appspot.com",
   messagingSenderId: "942912149788",
-  appId: "1:942912149788:web:6a7c26a3107258d48fc2d9",
-  measurementId: "G-EVGQTR1M5S"
+  appId: "1:942912149788:web:9a24be958bf58b168fc2d9",
+  measurementId: "G-LT9LN35K4P"
 };
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

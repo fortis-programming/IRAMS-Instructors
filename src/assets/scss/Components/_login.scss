@@ -1,0 +1,43 @@
+.login {
+  background-color: whitesmoke;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  form {
+    width: 35%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 4px;
+
+    button {
+      font-size: 14px;
+    }
+    div {
+      a {
+        float: right;
+        cursor: pointer;
+      }
+    }
+
+    .banner {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px;
+
+      h5 {
+        text-align: left;
+      }
+
+      small {
+        margin-top: -10px;
+        color: $black-1;
+      }
+    }
+  }
+}

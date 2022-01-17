@@ -1,0 +1,17 @@
+.main {
+  display: grid;
+  grid-template-columns: 13% 87%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    display: flex;
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;        
+    }
+  }
+}

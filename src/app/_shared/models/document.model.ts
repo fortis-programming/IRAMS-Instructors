@@ -1,10 +1,14 @@
 export interface DocumentModel {
-    validator: string;
-    message: string;
-    metaData: string;
-    sender: string;
-    type: string;
-    members: Array<string>;
-    comments: Array<string>;
-    status: string;
+  comments: Array<string>;
+  date: Date;
+  message: string;
+  members: Array<string>;
+  metaData: string;
+  requestId: string;
+  sender: string;
+  status: string;
+  type: string;
+  validator: string;
+  returned: boolean;
+  title: string;
 }

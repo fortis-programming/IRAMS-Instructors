@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IRAMS-Instructors": {
+    "IRAMS-Intructors.v2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/IRAMS-Instructors",
+            "outputPath": "dist/irams-intructors.v2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,7 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -75,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "IRAMS-Instructors:build:production"
+              "browserTarget": "IRAMS-Intructors.v2:build:production"
             },
             "development": {
-              "browserTarget": "IRAMS-Instructors:build:development"
+              "browserTarget": "IRAMS-Intructors.v2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IRAMS-Instructors:build"
+            "browserTarget": "IRAMS-Intructors.v2:build"
           }
         },
         "test": {
@@ -110,5 +108,5 @@
       }
     }
   },
-  "defaultProject": "IRAMS-Instructors"
+  "defaultProject": "IRAMS-Intructors.v2"
 }

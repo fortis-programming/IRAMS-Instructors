@@ -1,35 +1,39 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CKEditorModule } from 'ckeditor4-angular';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardItemComponent } from './dashboard/dashboard-item/dashboard-item.component';
-import { ViewRequestComponent } from './view-request/view-request.component';
-import { MemberItemComponent } from './view-request/member-item/member-item.component';
-import { NgxEditorModule } from 'ngx-editor';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { AuthGuardService } from './services/auth-guard.service';
+import { RequestsComponent } from './requests/requests.component';
+import { RequestItemComponent } from './requests/request-item/request-item.component';
+import { RequestPreviewComponent } from './requests/request-preview/request-preview.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { RequestDrawerComponent } from './requests/request-drawer/request-drawer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
-    DashboardItemComponent,
-    ViewRequestComponent,
-    MemberItemComponent
+    RequestsComponent,
+    RequestItemComponent,
+    RequestPreviewComponent,
+    AccountSettingsComponent,
+    RequestDrawerComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     FormsModule,
-    NgxEditorModule
+    AppRoutingModule,
+    CKEditorModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, AuthGuardService ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
